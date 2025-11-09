@@ -1,0 +1,31 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+import './navbar.css'
+
+function clicked(event){
+    const links = document.querySelectorAll('.links a');
+    links.forEach(link => {
+        link.classList.remove('active');
+    });
+    event.currentTarget.classList.add('active');
+}
+
+    
+function Navbar() {
+    return (
+        <>
+        <div className='navbar'>
+            <div className='logo'>Portfolio</div>   
+            <div className='links'>
+                <Link to="/" onClick={clicked}>Home</Link>
+                <Link to="/about" onClick={clicked}>About</Link>
+                <Link to="/journey" onClick={clicked}>Journey</Link>
+                <Link to="/projects" onClick={clicked}>Projects</Link>
+                <Link to="/contact" onClick={clicked}>Contact</Link>
+                <Link to="/resume" id='resume-btn' onClick={clicked}>Resume</Link>
+            </div>
+        </div>
+        </>
+    )
+}
+export default Navbar;
