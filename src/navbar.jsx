@@ -10,12 +10,18 @@ function clicked(event){
     event.currentTarget.classList.add('active');
 }
 
-    
+function handleMenuClick() {
+    const navbar = document.querySelector('.navbar'); 
+    navbar.classList.add('closed_menu');
+    navbar.classList.remove('navbar')
+}
+
 function Navbar() {
     return (
         <>
         <div className='navbar'>
-            <div className='logo'>Portfolio</div>   
+            <div className='logo'>Portfolio</div>  
+            <button type='menu' id='menu-btn' onClick={handleMenuClick}>Menu</button> 
             <div className='links'>
                 <Link to="/" onClick={clicked}>Home</Link>
                 <Link to="/about" onClick={clicked}>About</Link>
@@ -23,6 +29,7 @@ function Navbar() {
                 <Link to="/projects" onClick={clicked}>Projects</Link>
                 <Link to="/contact" onClick={clicked}>Contact</Link>
                 <Link to="/resume" id='resume-btn' onClick={clicked}>Resume</Link>
+                
             </div>
         </div>
         </>
