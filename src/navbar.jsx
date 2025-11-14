@@ -12,8 +12,10 @@ function clicked(event){
 
 function handleMenuClick() {
     const navbar = document.querySelector('.navbar'); 
-    navbar.classList.add('closed_menu');
-    navbar.classList.remove('navbar')
+    const btn_menu = document.getElementById('menu-btn');
+    const result = navbar.classList.toggle('expanded');
+    navbar.style.height = result ? '60px' : '400px';
+    btn_menu.textContent = result ? 'Menu' : 'Close';
 }
 
 function Navbar() {
@@ -21,7 +23,7 @@ function Navbar() {
         <>
         <div className='navbar'>
             <div className='logo'>Portfolio</div>  
-            <button type='menu' id='menu-btn' onClick={handleMenuClick}>Menu</button> 
+            <button type='menu' id='menu-btn' onClick={handleMenuClick}>Close</button> 
             <div className='links'>
                 <Link to="/" onClick={clicked}>Home</Link>
                 <Link to="/about" onClick={clicked}>About</Link>
