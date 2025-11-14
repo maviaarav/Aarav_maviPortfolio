@@ -57,6 +57,21 @@ The **React Compiler** (experimental) is enabled via `babel-plugin-react-compile
   package.json       # Scripts & dependencies
 ```
 
+## Pages and routes
+
+This project registers its client-side routes in `src/App.jsx` using React Router. The main pages and their component files are:
+
+- `/` — Home (component: `src/home.jsx`)
+- `/about` — About (component: `src/about.jsx`)
+- `/projects` — Projects (component: `src/project.jsx`)
+- `/contact` — Contact (component: `src/contact.jsx`)
+- `/journey` — Journey (component: `src/journey.jsx`)
+- `/resume` — Resume (component: `src/resume.jsx`)
+
+The top navigation bar is implemented in `src/navbar.jsx` and styled in `src/navbar.css`. It uses `react-router-dom`'s `<Link>` components for client-side navigation and includes a simple mobile menu toggle.
+
+To add a new page: create a React component in `src/`, then register a route in `src/App.jsx` (see the `createBrowserRouter` usage).
+
 ## 🧩 Scripts
 
 | Command | Purpose |
