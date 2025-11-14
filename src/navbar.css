@@ -15,6 +15,7 @@
     justify-content: space-between;
     padding: 0 50px;
     color: #0D1C14;
+    position: sticky;
 }
 #menu-btn{
     padding: 10px 20px;
@@ -36,8 +37,8 @@
     transition: 1s;
 }
 .logo {
-font-size: 34px;
-        font-weight: bold;
+    font-size: 34px;
+    font-weight: bold;
 }
 
 .links {
@@ -90,7 +91,6 @@ font-size: 34px;
         padding: 10px 20px;
         overflow: hidden;
     }
-
     .links {
         flex-direction: column;
         align-items: center;
@@ -105,7 +105,7 @@ font-size: 34px;
         text-align: center;
     }
     .logo{
-        font-size: 24px;
+        font-size: 34px;
         font-weight: bold;
     }
     #menu-btn{

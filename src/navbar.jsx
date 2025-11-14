@@ -12,9 +12,10 @@ function clicked(event){
 
 function handleMenuClick() {
     const navbar = document.querySelector('.navbar'); 
+    const logo = document.querySelector('.logo');
     const btn_menu = document.getElementById('menu-btn');
     const result = navbar.classList.toggle('expanded');
-    navbar.style.height = result ? '60px' : '400px';
+    navbar.style.height = result ? '60px' : '350px';
     btn_menu.textContent = result ? 'Menu' : 'Close';
 }
 
