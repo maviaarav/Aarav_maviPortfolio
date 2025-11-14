@@ -207,6 +207,7 @@ If you'd like, I can add a LICENSE file, CI badges, or example GitHub Actions fo
 **UI design ideation support:** Stich AI  
 **README drafting assistance:** Copilot GPT-5 model
 **For images:**Gemini 2.5 Flash
+**Fix**
 
 I iteratively refined both outputs — tools accelerated drafting; final decisions & edits are mine.
 
