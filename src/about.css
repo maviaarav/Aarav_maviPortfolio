@@ -33,7 +33,7 @@ p{
     margin: 15px 0 0 20px;
     color: #4D9973;
 }
-h3{
+.h3{
     font-size: 16px;
     font-weight: 400;
     margin: 15px 0 0 20px;
@@ -41,7 +41,7 @@ h3{
     color: #0D1C14;
     display: inline-flex;
 }
-h2{
+.h2{
     font-size: 25px;
     font-weight: 500;
     margin: 20px 0 0 20px;
@@ -69,7 +69,7 @@ h2{
     align-items: center;
     height: 100%;
 }
-h5{
+.h5{
     font-size: 30px;
     font-weight: 400;
     color: #0D1C14;
