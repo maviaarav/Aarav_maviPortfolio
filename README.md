@@ -86,7 +86,49 @@ Notes & accessibility:
 - External links: if a project link navigates to an external site (for example a deployed demo on Vercel), prefer using a plain `<a href="..." target="_blank" rel="noopener noreferrer">` so the browser handles external navigation and users get an expected "open in new tab" experience.
 - Semantic text: include visible titles and descriptions (as in the example `h4` / `h5` markup) to ensure cards are accessible to screen readers and keyboard users.
 
+## About page & styling
+
+The About page lives in `src/about.jsx` and its styles are in `src/about.css`.
+
+- Structure: the top-level container uses the `.about-page` class and is split into `.about-image` (left) and `.about-text` (right). The image is implemented as a decorative background on a `.image` element (`background-image: url(/src/images/about_image.png)`) while the textual content contains headings, a short bio and a set of progress bars indicating skill levels.
+- Progress bars: the CSS defines a `.progress-bar` container and a few fill classes (`.progress-fill`, `.progress-fill-2`, `.progress-fill-3`) where the `width` CSS property controls the visible percentage (70%, 60%, 75% in the current stylesheet). If you want dynamic control (from props/state) consider toggling classes or setting an inline style (e.g. style={{ width: `${value}%` }}) from React instead of hardcoding values in CSS.
+- Image assets: `about.css` references `/src/images/about_image.png`. With Vite it's generally better to either import images in the component (import aboutImage from './images/about_image.png') and use them in `style` or place them in `public/` and reference `/images/about_image.png` so the path is stable across builds.
+
+Important note (JSX compatibility)
+
+- In `src/about.jsx` there are several DOM attributes using standard HTML `class` instead of React's `className` (for example `<div class="progress-bar">`). This will cause warnings or unexpected behavior when JSX is compiled — please replace `class` with `className` throughout JSX files so React can apply classes correctly.
+
+Accessibility & semantics
+
+- Decorative background images should include an accessible alternative for screen readers; since a `div` with a background image has no `alt`, include an adjacent visually-hidden `img` or add `aria-label`/`role="img"` with an appropriate `aria-label` describing the image if it's meaningful.
+- Consider replacing decorative containers with semantic elements (`<section>`, `<figure>`, `<figcaption>`) where appropriate to improve document structure.
+- The progress bars are visual only; add textual equivalents (e.g., "Front-end — 70%") for screen readers or add `aria-valuenow` / `role="progressbar"` with min/max attributes if you want assistive tech to interpret them as progress controls.
+
+Developer tips
+
+- If you plan to animate or update progress values, expose the numeric value from state/props and compute `style={{ width: value + '%' }}` on the fill element instead of editing the CSS each time.
+- Keep image assets organized under `src/images` if you want them bundled, or move them to `public/` for direct static paths.
+
 ## 🧩 Scripts
+
+## Contact page & form
+
+The contact page is implemented in `src/contact.jsx` and styled in `src/contact.css`.
+
+- Form handling: the page contains a simple contact form that gathers name, email, subject and message and submits via a client-side `fetch` to the Web3Forms API (`https://api.web3forms.com/submit`). The example code appends an `access_key` before submitting and reads the JSON reply to show success/failure messages.
+- UI behaviour: on a successful submit the component toggles a `.successful-msg` element (shown) and hides the main `.contact-page` content temporarily, then resets the form and restores the page after a short timeout — see `src/contact.jsx` for the exact flow.
+- Assets: icons used by the contact page reference local images (for example `./images/email.png` and `./images/social.png`). Store these assets either in `src/images` and import them (as the component currently does) or place them in `public/` and reference absolute paths depending on your preferred bundling strategy.
+
+Security & best practice notes
+
+- Do not commit secrets: the example app currently sets an `access_key` value inline before sending the form. For production, move secrets or keys into environment variables on the server or use a server-side endpoint to proxy submissions so secrets remain out of the client bundle.
+- External links and mailto: the component uses `react-router-dom`'s `<Link>` for a `mailto:` link and for the GitHub URL. For mailto and other external URLs prefer a plain `<a href="mailto:...">` or `<a href="https://..." target="_blank" rel="noopener noreferrer">` so the browser handles them as expected.
+
+Accessibility
+
+- The form uses `required` attributes for basic HTML validation, but consider adding explicit `<label>` elements associated with inputs (or aria-label attributes) to improve screen-reader support.
+- Ensure that success/failure messages are announced to assistive technologies (for example by using `role="status"` or `aria-live="polite"` on the result container).
+
 
 | Command | Purpose |
 |---------|---------|

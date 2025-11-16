@@ -33,6 +33,12 @@ h1{
     margin: 15px 0 0 20px;
     color: #4D9973;
 }
+.titles{
+    display: flex;
+    margin-top: 20px;
+    justify-content: space-between;
+    font-size: 18px;
+}
 h3{
     font-size: 16px;
     font-weight: 400;
@@ -56,18 +62,46 @@ h3{
     margin: 10px 0 20px 20px;
 }
 
-.progress-fill {
+.progress-fill{
   width: 70%;         /* Change this to control fill % */
   height: 100%;
   background: #00f26f; /* Bright green fill */
   border-radius: 20px;
 }
-
+.progress-fill-2{
+  width: 60%;         /* Change this to control fill % */
+  height: 100%;
+  background: #00f26f; /* Bright green fill */
+  border-radius: 20px;
+}
+.image{
+    width: 82%;
+    height: 300px;
+    background-image: url(/src/images/about_image.png);
+    background-size: cover;
+    background-position: center;
+    border-radius: 70px;
+    box-shadow: 0 12px 30px rgba(13,28,20,0.12), 0 6px 18px rgba(0,242,111,0.10), inset 0 -6px 12px rgba(0,0,0,0.03);
+}
+.progress-fill-3{
+  width: 75%;         /* Change this to control fill % */
+  height: 100%;
+  background: #00f26f; /* Bright green fill */
+  border-radius: 20px;
+}
 .about-image{
-    display: flex;
+display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     height: 100%;
+    margin-left: -26px;
+}
+.header-2{
+    font-size: 20px;
+    color: #4D9973;
+    font-weight: 500;
+    text-align: center;
 }
 .h5{
     font-size: 30px;
@@ -77,4 +111,25 @@ h3{
     padding: 10px;
     border: 5px solid #0D1C14;
     border-style: dashed;
+}
+
+@media screen and (max-width: 768px){
+    .about-page{
+        flex-direction: column;
+        align-items: center;
+    }
+    .about-text{
+        width: 90%;
+        height: auto;
+    }
+    .about-image{
+        width: 90%;
+        height: auto;
+        margin: 20px 0 0 0;
+    }
+    .image{
+        width: 100%;
+        height: 250px;
+        border-radius: 40px;
+    }
 }

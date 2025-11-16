@@ -86,7 +86,9 @@ h2{
     gap: 2px;
     font-size: 14px;
     justify-content: center;
+    transition: 0.5s ease;
 }
+
 h4{
     color: #0D1C14;
     font: 550;
