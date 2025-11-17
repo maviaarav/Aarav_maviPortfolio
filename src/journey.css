@@ -1,0 +1,162 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.journey-section{
+    width: 960px;
+    height: 695px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+    padding: 20px;
+}
+.journey-heading{
+    font-size: 36px;
+    font-weight: 550;
+}
+.journey-text-content{
+    font-size: 18px;
+    line-height: 1;
+    color: #4D9973;
+    text-align: left;
+    font-weight: lighter;
+    padding: 0px 0 0px 20px;
+}
+.started{
+width: 928px;
+    height: 100px;
+    margin: 10px auto 0 auto;
+    display: flex;
+    margin-top: 30px;
+    position: relative;
+}
+.started::after{
+content: '';
+    width: 2.5px;
+    height: 60px;
+    background-color: #CFE8DB;
+    position: absolute;
+    top: 40px;
+    left: 23px;
+    z-index: -1;
+}
+.image-journey{
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    background: url(/src/images/started.png);
+    background-size: cover;
+}
+.image-journey-2{
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    background: url(./images/code.png);
+    background-size: cover;
+}
+.image-journey-3{
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    background: url(./images/Bulb.png);
+    background-size: cover;
+}
+.image-journey-4{
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    background: url(./images/python.png);
+    background-size: cover;
+}
+.image-journey-5{
+    width: 80px;
+    height: 50px;
+    object-fit: cover;
+    background: url(./images/alert.png);
+    background-size: cover;
+}
+.image-journey-6{
+    width: 60px;
+    height: 50px;
+    object-fit: cover;
+    background: url(./images/automation.png);
+    background-size: cover;
+}
+.image-journey-7{
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    background: url(./images/globe.png);
+    background-size: cover;
+}
+.image-journey-8{
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    background: url(./images/atom.png);
+    background-size: cover;
+}
+.image-journey-9{
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    background: url(./images/.png);
+    background-size: cover;
+}
+.content-text{
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+}
+.journey-text{
+font-size: 18px;
+    line-height: 1;
+    color: black;
+    font-weight: lighter;
+    padding: 10px;
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+.text-2{
+    color: #4D9973;
+    font-weight: lighter;
+    font-size: 18px;
+    padding: 0 0 0 12px;
+}
+@media screen and (max-width: 768px){
+    .journey-text-content{
+        text-align: center;
+        padding: 0;
+    }
+    .journey-section {
+        width: 100%;
+        height: auto;
+        padding: 10px;
+        text-align: center;
+    }
+    .started{
+        width: 100%;
+        height: auto;
+        flex-direction: column;
+        align-items: center;
+    }
+    .started::after{
+        top: 60px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .image-journey-5{
+        width: 50px;
+        height: 50px;
+    }
+    .image-journey-6{
+        width: 50px;
+        height: 50px;
+    }
+}
